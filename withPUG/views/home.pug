@@ -1,0 +1,25 @@
+doctype html
+html(lang='es')
+  include includes/head.pug
+  +head("Formulario | Proyecto N°5")
+  body
+    include includes/navbar.pug
+    +navbar()
+    div(class="container" style="margin-top: 4rem")
+      div(class="row")
+        div(class="col")
+          h1 Ingrese producto
+          form(action="/productos" style="margin-top: 2rem" method="POST")
+            div(class="mb-3")
+              label(for="title" class="form-label") ✏️ Nombre
+              input(type="text" class="form-control" id="title" name="title" placeholder="Laptop")
+            div(class="mb-3")
+              label(for="price" class="form-label") 💵 Precio (S/.)
+              input(type="text" class="form-control" id="price" name="price" placeholder="4.8")
+            div(class="mb-3")
+              label(for="thumbnail" class="form-label") 💻 Foto URL
+              input(type="url" class="form-control" id="thumbnail" name="thumbnail" placeholder="https://www.store.pe/646x1000/img1.jpg")
+            div(class="mb-3")
+              button(class="btn btn-primary" type="submit") Enviar
+  include includes/footer.pug
+  +footer()
